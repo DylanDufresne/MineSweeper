@@ -1,0 +1,36 @@
+Left to do in Minesweeper
+1) check for out of bounds on clicking already uncovered number tile
+
+BONUS time elapsed: start game: timer starts. end game: timer stops.
+	timer is timeline animation: timeline = new Timeline(new KeyFrame(Duration.millis(1000) e -> {//code here}));
+		cycle count for animation is endless??
+BONUS highscores saved in a txt file
+BONUS make a border around the window as in the real game
+
+DONE when user clicks on a mine and loses game; show any flagged tiles that were not mines as wrongMine
+DONE difficulty menu
+	menu can be buttons, doesnt have to be a dropdown menu(maybe a hBox for three buttons)
+	menuBar code in bb chat
+DONE show mines and timer as red digits; black background with red text
+DONE when game is won or lost: only clickable button is facebutton to start a new game
+	DONE just need to remove comments and this works, also check #2 if it works for this
+DONE left click on an uncovered number tile that has the proper number of flags around it; corresponding to the amount of bombs, will uncover the remaining 8 tiles surrounding it, or if the flag is misplaced, will blow up the bomb
+	DONE partially working
+DONE First click should be a spot with 0 mines around it. save first click coordinates. when you make mines, make sure no mine is placed at that spot or around it: generate mines after first click
+	DONE left side and bottom side dont work when first click is there
+DONE recursive method public void revealNear(int i, int j) to reveal all blank/numbered mines around the click
+	base case: if (i < 0 || j < 0 || i >= gameHeight || j >= gameWidth) return;
+	another base case: if (buttons[i][j].getState() > 0 && !buttons[i][j].getRevealed()) //change graphics // save i and j location for the click in instance variables
+	recursive case: if (buttons[i][j].getState() == 0 && !buttons[iu][j].getRevealed()) //change graphics and call recursive method
+DONE Check new game with facebutton make sure everything works
+DONE When taking off a flag, set the graphic to what it was before (only able to click if it is flag or if it is coverTile)
+DONE edit edge bomb numbers to work with other sizes
+DONE Figure out when all numbered tiles have been clicked: set faceButton to smiley
+DONE THINK DONE Figure out how many numbered tiles are on the gameboard
+DONE When you click on a mine, display that as a red mine and all other mines as grey mines
+DONE Start new game on faceButton click 
+DONE Left click on flagged tile will not do anything
+
+
+
+
